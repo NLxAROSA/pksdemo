@@ -65,7 +65,7 @@
 					<tag>latest</tag>
 					<useMavenSettingsForAuth>true</useMavenSettingsForAuth>
 					<buildArgs>
-						<JAR_FILE>target/pksdemo-0.0.1-SNAPSHOT.jar</JAR_FILE>
+						<JAR_FILE>${project.build.finalName}.jar</JAR_FILE>
 					</buildArgs>
 				</configuration>
 			</plugin>

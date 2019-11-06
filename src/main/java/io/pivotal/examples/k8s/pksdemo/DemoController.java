@@ -15,7 +15,7 @@ public class DemoController {
     @GetMapping
     public String helloPks() {
         return "Hello PKS! The current time is: "
-                + new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX").format(new Date());
+                + new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX").format(new Date()) + ", have a great day today!";
     }
 
 }

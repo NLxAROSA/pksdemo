@@ -34,9 +34,16 @@ Select a k8s provider of your choice (e.g. PKS/AKS/GKE/etc.) and create a cluste
 kubectl apply -f k8s-deployment.yml
 ```
 
-and expose them as a service through a load balancer using
+and expose them as a service through a load balancer with a randomly assigned ephemeral IP using
 
 ```bash
 kubectl apply -f k8s-service.yml
 ```
 
+If you want to expose the service through a load balancer with a pre-assigned static IP address, use
+
+```bash
+kubectl apply -f k8s-service-static-ip.yml
+```
+
+Note that you must reserve the static IP address at your IAAS of choice before exposing it with a static IP.

@@ -1,5 +1,5 @@
 # Getting Started
-This project builds a simple Spring Boot web app and builds a Docker container from it.
+This project builds a simple Spring Boot web app and builds a Docker container from it. The application has two endpoints; one that simply generates a message and the other that reads the message from a file.
 
 Build the project (and the dockerfile) using
 
@@ -25,6 +25,16 @@ In the `pom.xml` file replace the `docker.image.prefix` property with `youruseri
 ```bash
 ./mvnw dockerfile:push
 ``` 
+
+## Setup storage class and persistent volume claim on Azure
+Setup the `StorageClass` and `PersistentVolumeClaim` using the following commands:
+
+```bash
+kubectl apply -f azure-file-sc.yml
+kubectl apply -f azure-file-pvc.yml
+```
+
+Note: Depending on your Azure setup and k8s provider you may have to configure a storage account and/or a cluster role and binding. See also [https://docs.microsoft.com/en-us/azure/aks/azure-files-dynamic-pv](https://docs.microsoft.com/en-us/azure/aks/azure-files-dynamic-pv)
 
 ## Deploying to k8s
 

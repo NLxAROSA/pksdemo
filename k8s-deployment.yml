@@ -16,6 +16,15 @@ spec:
     spec:
       containers:
         - name: pksdemo
-          image: nlxarosa/pksdemo:latest
+          image: nlxarosa/pksdemo:file-test
+          imagePullPolicy: Always
           ports:
             - containerPort: 8080
+          volumeMounts:
+          - mountPath: "/mnt/azure"
+            name: volume
+      volumes:
+        - name: volume
+          persistentVolumeClaim:
+            claimName: azurefile
+
